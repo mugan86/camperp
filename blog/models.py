@@ -42,6 +42,7 @@ class Post(models.Model):
     id = models.AutoField(primary_key=True)
     author = models.ForeignKey('auth.User')  # User of django
     title = models.CharField(max_length=200)
+    intro_text = models.CharField(default="", blank=False, max_length=150)
     text = models.TextField()
     type = models.ForeignKey(PostType)
     category = models.ForeignKey(PostCategory)
