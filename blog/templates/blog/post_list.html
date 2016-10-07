@@ -2,23 +2,30 @@
 <html>
     <head>
         <title>Camperp - Main Page - Blog</title>
-        <link rel="stylesheet" href="{% static "css/blog.css" %}">
         <link href="https://fonts.googleapis.com/css?family=Ruslan+Display" rel="stylesheet">
-        <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">HAU DESGAITUA MOMENTUZ GURE CSS ERABILTZEKO-->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static "css/blog.css" %}">
     </head>
     <body>
         <div class="page-header">
             <h1><a href="/">Camperp - Blog</a></h1>
         </div>
-       {% for post in posts %}
-            <div>
-                <div class="post">
-                    <p>Published: {{ post.published_date }}</p>
-                    <h1><a href="#">{{ post.title }}</a></h1>
-                    <p>{{ post.text|linebreaksbr }}</p>
+       <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% for post in posts %}
+                        <div class="post">
+                            <div class="date">
+                                {{ post.published_date }}
+                            </div>
+                            <br/>
+                            <h1><a href="">{{ post.title }}</a></h1>
+                            <p>{{ post.text|linebreaksbr }}</p>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
-        {% endfor %}
+        </div>
     </body>
 </html>
