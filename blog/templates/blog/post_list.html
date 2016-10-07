@@ -8,12 +8,16 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">HAU DESGAITUA MOMENTUZ GURE CSS ERABILTZEKO-->
     </head>
     <body>
+        <div class="page-header">
+            <h1><a href="/">Camperp - Blog</a></h1>
+        </div>
        {% for post in posts %}
             <div>
-                <h1><a href="#">{{ post.title }}</a></h1>
-                <p>Published: {{ post.published_date }}</p>
-                <p>{{ post.text|linebreaksbr }}</p>
-                <hr/>
+                <div class="post">
+                    <p>Published: {{ post.published_date }}</p>
+                    <h1><a href="#">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
             </div>
         {% endfor %}
     </body>
