@@ -21,11 +21,12 @@ class PostType(models.Model):
     class Meta:
         unique_together = (("type",),)
 
+
 class PostCategory(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(default="", max_length=50)
     description = models.CharField(default="", max_length=200, blank=True)
-    created_date = models.DateTimeField(default = timezone.now)
+    created_date = models.DateTimeField(default=timezone.now)
 
     def publish(self):
         self.save()
