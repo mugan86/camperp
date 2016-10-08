@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.utils import timezone
+from tinymce import models as tinymce_models
 
 
 class PostType(models.Model):
@@ -44,7 +45,8 @@ class Post(models.Model):
     author = models.ForeignKey('auth.User')  # User of django
     title = models.CharField(max_length=200)
     intro_text = models.CharField(default="", blank=False, max_length=150)
-    text = models.TextField()
+    #text = models.TextField()
+    text = tinymce_models.HTMLField()
     type = models.ForeignKey(PostType)
     category = models.ForeignKey(PostCategory)
     created_date = models.DateTimeField(
