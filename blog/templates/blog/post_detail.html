@@ -1,6 +1,7 @@
 {% extends 'blog/base.html' %}
 
  {% block content %}
+    <a class="btn btn-default" href="{% url 'blog_post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
     <div class="post">
         <div class="date">
             {{ post.published_date }}
