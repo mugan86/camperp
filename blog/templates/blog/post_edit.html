@@ -1,9 +1,12 @@
 {% extends 'blog/base.html' %}
-
+{% load staticfiles %}
 {% block content %}
     <h1>New post</h1>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
+    <!-- DatePicker Jquery -->
+    <script src="{% static "js/blog.js" %}"></script>
 {% endblock %}
+
