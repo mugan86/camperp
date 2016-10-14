@@ -51,6 +51,8 @@ class Post(models.Model):
     category = models.ForeignKey(PostCategory)
     created_date = models.DateTimeField(
         default=timezone.now)
+    update_date = models.DateField(
+        default=timezone.now)
     published_date = models.DateTimeField(
         blank=True, null=True)
 
