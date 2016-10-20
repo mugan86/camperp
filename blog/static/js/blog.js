@@ -6,7 +6,7 @@ $(document).ready(function()
                 changeMonth: true,
                 changeYear: true,
                 yearRange: '1900:+nn',
-                dateFormat: 'dd/mm/yy',
+                dateFormat: 'yy-mm-dd',
                 maxDate: "+0D",
                });
 
